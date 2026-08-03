@@ -30,7 +30,7 @@
     "lucide-react": "^1.28.0",
     "next": "16.2.12",
     "next-themes": "^0.2.1",
-    "postcss": "8.4.29",
+    "postcss": "8.5.18",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-dropzone": "^19.1.1",
