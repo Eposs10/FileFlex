@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: true,
+  experimental: {
+    useTypeScriptCli: true,
+  },
 }
 
 module.exports = nextConfig

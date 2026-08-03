@@ -1,4 +1,4 @@
-FROM node:18 AS build
+FROM node:26 AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 
 RUN yarn build
 
-FROM node:18 AS production
+FROM node:26 AS production
 
 WORKDIR /app
 
