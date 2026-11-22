@@ -2,17 +2,20 @@ FROM node:26 AS build
 
 WORKDIR /app
 
+RUN npm install -g corepack
 
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 COPY . .
-
 RUN yarn build
+
 
 FROM node:26 AS production
 
 WORKDIR /app
+
+RUN npm install -g corepack
 
 COPY --from=build /app/package.json /app/yarn.lock ./
 COPY --from=build /app/.next ./.next
