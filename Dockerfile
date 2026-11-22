@@ -1,7 +1,6 @@
 FROM node:26-alpine AS base
 
-# Install corepack (included in Node.js 26+, but explicit enable for Alpine)
-RUN corepack enable
+RUN npm install -g corepack
 
 FROM base AS build
 
