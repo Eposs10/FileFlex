@@ -5,7 +5,7 @@ WORKDIR /app
 RUN npm install -g corepack
 
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install --immutable
 
 COPY . .
 RUN yarn build
@@ -21,7 +21,7 @@ COPY --from=build /app/package.json /app/yarn.lock ./
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/public ./public
 
-RUN yarn install --production --frozen-lockfile
+RUN yarn install --production --immutable
 
 ENV NODE_ENV=production
 
